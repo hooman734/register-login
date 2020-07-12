@@ -27,6 +27,12 @@ app
 
 
 // define routes
+
+router.get('/api/register', async ctx => {
+   await ctx.render('register');
+});
+
+
 router.get('/api', async ctx => {
    await ctx.render('first_view');
 });
