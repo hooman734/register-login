@@ -1,9 +1,16 @@
+// import built in modules & setup using port
 const Koa = require('koa'),
    path = require('path'),
    Pug = require('koa-pug'),
-   Router = require('koa-router'),
    KoaBody = require('koa-body'),
    port = process.env.PORT || 4444;
+
+   
+
+   
+// import customized routers
+const registerRouter = require(path.resolve(__dirname, './routers', 'registerRouter'));
+
 
 
 // instantiate all requirements
@@ -17,33 +24,23 @@ const pug = new Pug({
 
 
 
+// use body
+app.use(KoaBody())
+
+
 
 // setup routers
 app
-   .use(KoaBody())
-   .use(router.allowedMethods())
-   .use(router.routes());
+   .use(registerRouter.routes())
+   .use(registerRouter.allowedMethods());
    
-
-
-// define routes
-
-router.get('/api/register', async ctx => {
-   await ctx.render('register');
-});
-
-
-router.get('/api', async ctx => {
-   await ctx.render('first_view');
-});
-
-
 
 
 // route to default welcome page
 app.use(async ctx => {
    ctx.body = '<h1><em>Welcome...</em></h1>';
  });
+
 
 
 // setup listening
