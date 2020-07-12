@@ -1,0 +1,25 @@
+{
+  "name": "reg-login",
+  "version": "2.0.0",
+  "description": "A practice of developing a register, login in action.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Hooman",
+  "license": "ISC",
+  "engines": {
+    "node": "14.3.0"
+  },
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-pug": "^4.0.4",
+    "koa-router": "^9.1.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
