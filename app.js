@@ -25,7 +25,7 @@ const pug = new Pug({
 
 
 // use body
-app.use(KoaBody())
+app.use(KoaBody());
 
 
 
@@ -38,7 +38,8 @@ app
 
 // route to default welcome page
 app.use(async ctx => {
-   ctx.body = '<h1><em>Welcome...</em></h1>';
+   await ctx.render('first_view');
+   // ctx.body = `<h1><em>Welcome...</em></h1>`;
  });
 
 

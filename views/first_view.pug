@@ -5,5 +5,12 @@ block scripts
 
 
 block content
-    .container
-        p.badge.badge-secondary Hello from PUG!
+    .container-fluid.my-5
+        form.pd-1(method='POST', action='/api/register')
+ 
+            button.btn.btn-outline-primary.btn-lg.btn-block To register please - Sign Up!
+
+        form.pd-1(method='GET', action='/api/register')
+            
+            button.btn.btn-outline-success.btn-lg.btn-block To login please - Sign In!
+
