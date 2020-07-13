@@ -6,11 +6,16 @@ block scripts
 
 block content
     .container-fluid.my-5
-        form.pd-1(method='POST', action='/api/register')
+        h1.text-muted
+            em Welcome...
+        
+        br
+        
+        form.pd-1(method='GET', action='/api/register')
  
             button.btn.btn-outline-primary.btn-lg.btn-block To register please - Sign Up!
 
-        form.pd-1(method='GET', action='/api/register')
+        form.pd-1(method='GET', action='/api/login')
             
             button.btn.btn-outline-success.btn-lg.btn-block To login please - Sign In!
 

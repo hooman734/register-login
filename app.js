@@ -10,6 +10,7 @@ const Koa = require('koa'),
    
 // import customized routers
 const registerRouter = require(path.resolve(__dirname, './routers', 'registerRouter'));
+const loginRouter = require(path.resolve(__dirname, './routers', 'loginRouter'));
 
 
 
@@ -32,7 +33,9 @@ app.use(KoaBody());
 // setup routers
 app
    .use(registerRouter.routes())
-   .use(registerRouter.allowedMethods());
+   .use(registerRouter.allowedMethods())
+   .use(loginRouter.routes())
+   .use(loginRouter.allowedMethods());
    
 
 
